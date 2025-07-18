@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Rust and Cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+. "$HOME/.cargo/env"
+
+# System dependencies installed via Cargo
+cargo install atuin starship eza zellij zoxide --locked
+
+# System dependencies
+sudo apt install -y \
+  ripgrep \
+  fd-find \
+  fzf \
+  bat \
+  zsh
+
+mkdir -p ~/.config
+
+# Install Zsh, Prezto, and Zplug
+export ZDOTDIR="$HOME/.config/zsh"
+chsh -s $(which zsh)
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+
+# Clone Neovim configuration
+git clone https://github.com/omareloui/nvim ~/.config/nvim
+
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+. "$NVM_DIR/nvm.sh"
+
+# Install Neovim AppImage
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+chmod u+x nvim-linux-x86_64.appimage
+mkdir -p .local/bin
+mv nvim-linux-x86_64.appimage .local/bin/nvim
+
+# Install Pyenv
+curl -fsSL https://pyenv.run | bash

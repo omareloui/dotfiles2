@@ -9,3 +9,5 @@ ln -s config/nvim-local ~/.config/nvim-local
 ln -s config/starship.toml ~/.config/starship.toml
 ln -s config/zellij ~/.config/zellij
 ln -s config/zsh ~/.config/zsh
+
+. "./install-deps"
