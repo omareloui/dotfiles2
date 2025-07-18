@@ -1,0 +1,14 @@
+-- # vim:ft=lua
+
+return {
+  plugins = {
+    mason = {
+      enabled = true,
+    },
+  },
+
+  system_packages = {
+    vue_lsp = nil,
+    omnisharp_dll = nil,
+  },
+}

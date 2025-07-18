@@ -1,0 +1,22 @@
+enter_accept = true
+inline_height = 0
+keymap_mode = "vim-normal"
+style = "auto"
+
+[keymap_cursor]
+emacs = "blink-bar"
+vim_insert = "blink-bar"
+vim_normal = "blink-block"
+
+[stats]
+common_prefix = ["sudo"]
+common_subcommands = [
+    "cargo",
+    "go",
+    "git",
+    "npm",
+    "yarn",
+    "pnpm",
+    "docker",
+    "kubectl",
+]

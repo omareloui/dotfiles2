@@ -1,0 +1,56 @@
+[alias]
+        add-nowhitespace = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -"
+        ff = "merge --ff-only"
+        graph = "log --decorate --oneline --graph"
+        l = "log --pretty=format:\"%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --graph --date=relative --decorate --all"
+        p = "pull --ff-only"
+        pushall = "!git remote | xargs -L1 git push --all"
+        sync = "!MAIN_BRANCH=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p') git switch --detach --quiet HEAD && git fetch origin $MAIN_BRANCH:$MAIN_BRANCH && git switch --quiet -"
+        uc = "reset HEAD^ --soft"
+        uncommit = "reset HEAD^ --soft"
+
+[branch]
+        sort = "committerdate"
+
+[column]
+        ui = "auto"
+
+[commit]
+        gpgSign = true
+        verbose = true
+
+[core]
+        editor = "nvim"
+        pager = "delta --dark --diff-so-fancy --paging=never --line-numbers"
+        sshCommand = "ssh -i ~/.ssh/id_gitlab"
+
+[credential "https://gist.github.com"]
+        helper = "gh auth git-credential"
+
+[credential "https://github.com"]
+        helper = "gh auth git-credential"
+
+[delta]
+        diff-so-fancy = true
+        line-numbers = true
+        side-by-side = true
+
+[init]
+        defaultBranch = "main"
+
+[interactive]
+        diffFilter = "delta --color-only"
+
+[push]
+        autoSetupRemote = true
+
+[rerere]
+        enabled = true
+
+[tag]
+        gpgSign = true
+
+[user]
+        email = "omar.eloui@orange.com"
+        name = "Omar Eloui"
+        signingKey = "A2988E07D8D3F81367ADB495ACDA82755349B4DF"
