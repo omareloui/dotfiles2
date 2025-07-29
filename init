@@ -1,13 +1,4 @@
 #!/usr/bin/env bash
 
-ln -s "$(pwd)/config/.zshenv" ~/.zshenv
-
-ln -s "$(pwd)/config/atuin" ~/.config/atuin
-ln -s "$(pwd)/config/git" ~/.config/git
-ln -s "$(pwd)/config/lazygit" ~/.config/lazygit
-ln -s "$(pwd)/config/nvim-local" ~/.config/nvim-local
-ln -s "$(pwd)/config/starship.toml" ~/.config/starship.toml
-ln -s "$(pwd)/config/zellij" ~/.config/zellij
-ln -s "$(pwd)/config/zsh" ~/.config/zsh
-
+. "./link"
 . "./install-deps"
