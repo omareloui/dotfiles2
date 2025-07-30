@@ -33,7 +33,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 
-alias -- bat='catbat'
+alias -- bat='batcat'
 alias -- cat='bat --color always --plain'
 alias -- distro='cat /etc/*-release | awk -F'\''='\'' '\''/DISTRIB_ID/ {print $2}'\'''
 alias -- docker_clean='docker builder prune -a --force'
