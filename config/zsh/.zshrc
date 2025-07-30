@@ -78,5 +78,5 @@ alias -- zj=zellij
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 eval "$(zellij setup --generate-auto-start zsh)"
-eval "$(pyenv init - bash)"
+eval "$(pyenv init - zsh)"
 eval "$(pyenv virtualenv-init -)"
