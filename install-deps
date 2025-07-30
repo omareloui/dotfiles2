@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 # Rust and Cargo
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSfo rust_installer https://sh.rustup.rs
+chmod +x rust_installer
+./rust_installer -y
+rm rust_installer
 
 . "$HOME/.cargo/env"
 
